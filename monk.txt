@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int input;
+    cin>>input;
+    while(input--)
+    {
+        int size,difference=0;
+        cin>>size;
+        long long int array[size],array2[size],max_val;
+        for(int first=0;first<size;first++)
+        {
+            cin>>array[first];
+        }  
+        for(int first=0;first<size;first++)
+        {
+            cin>>array2[first];
+        } 
+        for(int first=0;first<size;first++)
+        {
+            for(int second=size-1;second>=first;second--)
+            {
+                if(array2[second] >= array[first])
+                {
+                    if( (second-first) > difference)
+                    {
+                        difference=second-first;
+                        break;
+                    }
+                }
+            }  
+        }
+        cout<<difference<<endl;            
+    }           
+    return 0;
+}
